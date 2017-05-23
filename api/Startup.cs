@@ -25,7 +25,9 @@ namespace api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc()
+                .AddXmlSerializerFormatters();
+                
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Generate Random Data API", Version = "v1" });
@@ -43,9 +45,9 @@ namespace api
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Generate Random Data API V1");
             });
 
-            var options = new RewriteOptions()
+            var redirectRootToSwagger = new RewriteOptions()
                 .AddRedirect("^$", "swagger");
-            app.UseRewriter(options);
+            app.UseRewriter(redirectRootToSwagger);
         }
     }
 }
