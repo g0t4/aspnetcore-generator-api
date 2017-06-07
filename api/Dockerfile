@@ -1,8 +1,11 @@
 # Build Stage
 FROM microsoft/aspnetcore-build:2 AS build-env
 WORKDIR /api
-COPY . .
+
+COPY api.csproj .
 RUN dotnet restore
+
+COPY . .
 RUN dotnet publish -o /publish
 
 # Runtime Image Stage
