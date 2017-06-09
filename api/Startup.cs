@@ -30,7 +30,7 @@ namespace api
                 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "Generate Random Data API", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "NEW Generate Random Data API", Version = "v1" });
             });
         }
 
