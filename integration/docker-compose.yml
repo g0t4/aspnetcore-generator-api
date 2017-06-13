@@ -1,0 +1,11 @@
+version: '3.1'
+
+services:
+  generator:
+    image: my-registry:55000/gen:ci-10
+    ports:
+      - "8080:80"
+  mail:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"
