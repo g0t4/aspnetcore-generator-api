@@ -9,7 +9,8 @@ services:
         ports:
             - 8111:8111
     teamcity-agent:
-        image: jetbrains/teamcity-agent:2017.1.2
+        image: aspnetcore/teamcity-agent-with-compose:2017.1.2
+        build: ./agent
         environment:
             SERVER_URL: http://teamcity:8111
         volumes:
