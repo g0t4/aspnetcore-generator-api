@@ -37,7 +37,7 @@ END
 #  - Removes docker.socket from After
 #  - Sets LimitNOFILE=infinity
 #  - Removes -H fd:// from ExecStart 
-wget -O /lib/systemd/system/docker.service https://raw.githubusercontent.com/docker/docker/v17.03.0-ce/contrib/init/systemd/docker.service.rpm
+wget -O /lib/systemd/system/docker.service https://raw.githubusercontent.com/docker/docker/v17.05.0-ce/contrib/init/systemd/docker.service.rpm
 systemctl daemon-reload
 systemctl restart docker
 
