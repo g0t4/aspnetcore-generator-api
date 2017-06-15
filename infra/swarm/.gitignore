@@ -1,0 +1,9 @@
+
+# Created by https://www.gitignore.io/api/vagrant
+
+### Vagrant ###
+.vagrant/
+
+# End of https://www.gitignore.io/api/vagrant
+
+*.inspect
