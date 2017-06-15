@@ -1,4 +1,6 @@
 Make sure to change IP addresses to work in your environment, notably the 192.168. prefix. This setup is currently devised to work on my 192.168.0 network with VMs starting with 201+. And the `my-registry` is mapped to 192.168.0.199.
+- [Vagrantfile] - update both network configs: `node.vm.network "public_network", ip: "192.168.0.20#{number}", bridge: "en0: Ethernet"`
+- [provision/node.sh] - look for `my-registry` and update accordingly
 
 ## Validate things work
 
