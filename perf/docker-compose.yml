@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  web:
+    image: perf-web
+    build: .
+    ports:
+      - "8080:80" # in the event that you want to manually test the site
+  testing:
+    image: buildpack-deps:curl 
+    volumes:
+      - ./:/perf
+    command: /perf/test.sh

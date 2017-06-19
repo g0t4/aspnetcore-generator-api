@@ -1,0 +1,8 @@
+%{time_total} seconds, response_code: %{response_code}\n
+    namelookup: %{time_namelookup},
+ connect: %{time_connect},
+ appconnect: %{time_appconnect}\n
+    pretransfer: %{time_pretransfer},
+ redirect: %{time_redirect},
+ starttransfer: %{time_starttransfer}
+\n
