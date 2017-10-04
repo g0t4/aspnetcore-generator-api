@@ -32,7 +32,7 @@ If you want to use a pre-release version use the `-nightly` repos, i.e.
 - `microsoft/dotnet-nightly` instead of `microsoft/dotnet`
 
 Announcements related to this course, since publishing: 
-    - During the previews of .NET Core 2.0, Debian Stretch was released. Both Stretch (v9) and Jessie (v8) images are available. As of .NET Core 2.0 RTM Stretch is now used in the multi-architecture tags. And, Stretch is now the default for the lifespan of .NET Core 2.x releases. https://github.com/dotnet/announcements/issues/16
-    - microsoft/dotnet & microsoft/dotnet-nightly image tags are now visually grouped by OS & CPU architecture https://github.com/dotnet/announcements/issues/27
-    - dotnet restore is now an implicit command, i.e. when you run dotnet build it will perform a restore if needed. That said, `dotnet restore` is still worthwhile to explicitly control when package restore occurs, for example to optimize the speed of building images as discussed in the courses. https://github.com/dotnet/announcements/issues/23
+- During the previews of .NET Core 2.0, Debian Stretch was released. Both Stretch (v9) and Jessie (v8) images are available. As of .NET Core 2.0 RTM Stretch is now used in the multi-architecture tags. And, Stretch is now the default for the lifespan of .NET Core 2.x releases. https://github.com/dotnet/announcements/issues/16
+- microsoft/dotnet & microsoft/dotnet-nightly image tags are now visually grouped by OS & CPU architecture https://github.com/dotnet/announcements/issues/27
+- dotnet restore is now an implicit command, i.e. when you run dotnet build it will perform a restore if needed. That said, `dotnet restore` is still worthwhile to explicitly control when package restore occurs, for example to optimize the speed of building images as discussed in the courses. https://github.com/dotnet/announcements/issues/23
 
