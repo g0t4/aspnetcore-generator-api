@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
 
-    config.vm.box = "boxcutter/ubuntu1610"
+    config.vm.box = "box-cutter/ubuntu1610"
     config.vm.provision "shell", path: "provision/node.sh", privileged: true
 
     # Managers
