@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   generator:
-    image: my-registry:55000/gen:ci-${GENERATOR_BUILD_NUMBER-10}
+    image: internal-registry:5000/generator:ci-${GENERATOR_BUILD_NUMBER-10}
     #ports:
     #  - "8080:80"
   mail:
@@ -10,7 +10,7 @@ services:
     #ports:
     #  - "8025:8025"
   integration:
-    image: my-registry:55000/gen:integration-${BUILD_NUMBER-10}
+    image: internal-registry:5000/generator:integration-${BUILD_NUMBER-10}
     build: .
     environment:
       - TEAMCITY_PROJECT_NAME
