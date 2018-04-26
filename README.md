@@ -14,6 +14,12 @@ This repository contains source code for two courses:
     - The performance testing environment: [perf](https://github.com/g0t4/aspnetcore-generator-api/tree/perf)
 - The [course](https://github.com/g0t4/aspnetcore-generator-api/tree/course) branch is what I used throughout both courses as a single branch of all changes minus the above three one-off branches at the end of the second course.
 
+## Links
+
+- Troubleshooting Docker for Windows, the docs are wonderful: 
+    - https://docs.docker.com/docker-for-windows/troubleshoot/ 
+    - Especially, read "Limitations of Windows containers for localhost and published ports": https://docs.docker.com/docker-for-windows/troubleshoot/#limitations-of-windows-containers-for-localhost-and-published-ports
+
 ## Errata / Updates 
 
 All branches in this repository have been updated for `2.0.0 RTM`. [Issue #3](https://github.com/g0t4/aspnetcore-generator-api/issues/3)
