@@ -24,16 +24,14 @@ This repository contains source code for two courses:
 
 ### 2.2.0 notes
 
-- [ ] 2.2.0 images https://github.com/dotnet/dotnet-docker/issues/504
+- [ ] [Arm64/Linux] 2.2 docker images https://github.com/dotnet/dotnet-docker/issues/504
 
 ### 2.1.0 notes
 
-- [ ] Alpine Linux image!!! 
-    - Announcement: dotnet/dotnet-docker#488
-        - https://github.com/dotnet/dotnet-docker/issues/488
 - **Starting with .NET Core 2.1-preview2, the ASP.NET Core images (previously in  [`microsoft/aspnetcore`](https://hub.docker.com/r/microsoft/aspnetcore) & [`microsoft/aspnetcore-build`](https://hub.docker.com/r/microsoft/aspnetcore-build) ) will be consolidated into the Docker Hub [`microsoft/dotnet`](https://hub.docker.com/r/microsoft/dotnet/) repository.** 
     - **DOES NOT AFFECT 2.0 and 1.X images**.
     - **DOES NOT AFFECT non-aspnetcore apps**.
+    - [Announcement: _Migrating from aspnetcore docker repos to dotnet_](https://github.com/aspnet/Announcements/issues/298)
     - *I've always wondered why separate aspnetcore repositories were necessary so I welcome this change!*
     - **Historically**, as mentioned in the course, we've had three repos:
         1. `microsoft/dotnet` 
@@ -46,6 +44,10 @@ This repository contains source code for two courses:
             - Contains only sdk/development images for ASP.NET Core apps, i.e. `microsoft/aspnetcore-build:2`
             - Also contains some front end build tools like nodejs
         - This division was confusing because for a general dotnet app you use one repo regardless if you need sdk or runtime, and then if you're developing ASP.NET Core then you have to pick a repo based on needing sdk (build) or runtime! SHEESH! Don't we have better things to worry about :) (I kid, .NET Core is so awesome I don't mind this inconvenience)
+        - _2.1.300-preview1 is the last version of .NET Core in `aspnetcore/aspnetcore-build` repos_
+        - [ ] AFAIK - aspnetcore nightly repos are stopping at v2.0 too
+            - [`aspnetcore-build-nightly`](https://hub.docker.com/r/microsoft/aspnetcore-build-nightly/)
+            - [`aspnetcore-nightly`](https://hub.docker.com/r/microsoft/aspnetcore-nightly/)
     - **Going forward**:
         - *I'm using .NET Core 1.X/2.0:*
             - DON'T CHANGE ANYTHING
@@ -54,7 +56,7 @@ This repository contains source code for two courses:
             - Patches & security fixes will continue to be made available in these repositories
         - *I'm using .NET Core 2.1:*
             - Use `microsoft/dotnet`, that's it!
-                - Ok, I lied... nightly builds are in `microsoft/dotnet-nightly`
+                - Ok, I lied... nightly builds are in [`microsoft/dotnet-nightly`](https://hub.docker.com/r/microsoft/dotnet-nightly)
             - **v2.1 is pre-release so all of this is subject to change :)**
             - *Common, tell me the specifics!* Ok...
                 - `microsoft/dotnet:2-sdk` for developing any netcore app
@@ -65,6 +67,11 @@ This repository contains source code for two courses:
         - [ ] TODO link announcement
     - [ ] TODO - rework course files to use 2.1
     - [ ] TODO other big 2.1 changes
+- [ ] Review issues https://github.com/dotnet/dotnet-docker/issues/504
+    - [ ] Update 2.1 Alpine images to be based on to latest https://github.com/dotnet/dotnet-docker/issues/488 
+    - [ ] Add arm32v7 2.1-aspnetcore-runtime image https://github.com/dotnet/dotnet-docker/issues/480 
+    - [ ] bionic image
+    - [ ] 2.1 RC1 images https://hub.docker.com/r/microsoft/dotnet-nightly/
 
 ### 2.0.0 RTM notes
 
@@ -88,3 +95,13 @@ Announcements related to this course, since publishing:
 - microsoft/dotnet & microsoft/dotnet-nightly image tags are now visually grouped by OS & CPU architecture https://github.com/dotnet/announcements/issues/27
 - dotnet restore is now an implicit command, i.e. when you run dotnet build it will perform a restore if needed. That said, `dotnet restore` is still worthwhile to explicitly control when package restore occurs, for example to optimize the speed of building images as discussed in the courses. https://github.com/dotnet/announcements/issues/23
 
+## Resources on Coming Changes
+
+These are great resources for keeping up to date on what's coming next in .NET Core land:
+
+- [.NET Announcements](https://github.com/dotnet/Announcements/issues)
+- [ASP.NET Announcements](https://github.com/aspnet/Announcements/issues)
+- [.NET Docker issues](https://github.com/dotnet/dotnet-docker/issues)
+- [Docker for Windows release notes](https://docs.docker.com/docker-for-windows/edge-release-notes/)
+- [Docker for Mac release notes](https://docs.docker.com/docker-for-mac/edge-release-notes/)
+- [Docker CE release notes](https://docs.docker.com/release-notes/docker-ce/)
