@@ -22,8 +22,15 @@ This repository contains source code for two courses:
 
 ## Errata / Updates 
 
+### 2.2.0 notes
+
+- [ ] 2.2.0 images https://github.com/dotnet/dotnet-docker/issues/504
+
 ### 2.1.0 notes
 
+- [ ] Alpine Linux image!!! 
+    - Announcement: dotnet/dotnet-docker#488
+        - https://github.com/dotnet/dotnet-docker/issues/488
 - **Starting with .NET Core 2.1-preview2, the ASP.NET Core images (previously in  [`microsoft/aspnetcore`](https://hub.docker.com/r/microsoft/aspnetcore) & [`microsoft/aspnetcore-build`](https://hub.docker.com/r/microsoft/aspnetcore-build) ) will be consolidated into the Docker Hub [`microsoft/dotnet`](https://hub.docker.com/r/microsoft/dotnet/) repository.** 
     - **DOES NOT AFFECT 2.0 and 1.X images**.
     - **DOES NOT AFFECT non-aspnetcore apps**.
