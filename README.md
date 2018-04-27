@@ -22,6 +22,45 @@ This repository contains source code for two courses:
 
 ## Errata / Updates 
 
+### 2.1.0 notes
+
+- **Starting with .NET Core 2.1-preview2, the ASP.NET Core images (previously in  [`microsoft/aspnetcore`](https://hub.docker.com/r/microsoft/aspnetcore) & [`microsoft/aspnetcore-build`](https://hub.docker.com/r/microsoft/aspnetcore-build) ) will be consolidated into the Docker Hub [`microsoft/dotnet`](https://hub.docker.com/r/microsoft/dotnet/) repository.** 
+    - **DOES NOT AFFECT 2.0 and 1.X images**.
+    - **DOES NOT AFFECT non-aspnetcore apps**.
+    - *I've always wondered why separate aspnetcore repositories were necessary so I welcome this change!*
+    - **Historically**, as mentioned in the course, we've had three repos:
+        1. `microsoft/dotnet` 
+            - General .NET Core development (non-aspnetcore apps, i.e. console apps)
+            - Contains runtime/production images, i.e. `microsoft/dotnet:2-runtime`
+            - Contains sdk/development images, i.e. `microsoft/dotnet:2-sdk`
+        2. `microsoft/aspnetcore` 
+            - Contains only runtime/production images for ASP.NET Core apps, i.e. `microsoft/aspnetcore:2`
+        3. `microsoft/aspnetcore-build`
+            - Contains only sdk/development images for ASP.NET Core apps, i.e. `microsoft/aspnetcore-build:2`
+            - Also contains some front end build tools like nodejs
+        - This division was confusing because for a general dotnet app you use one repo regardless if you need sdk or runtime, and then if you're developing ASP.NET Core then you have to pick a repo based on needing sdk (build) or runtime! SHEESH! Don't we have better things to worry about :) (I kid, .NET Core is so awesome I don't mind this inconvenience)
+    - **Going forward**:
+        - *I'm using .NET Core 1.X/2.0:*
+            - DON'T CHANGE ANYTHING
+            - "Legacy" repos / organization will remain
+                - *phew! - can you imagine forcing every .NET Core Dockerfile ever to be updated! There's a good reason why things are left as is historically.*
+            - Patches & security fixes will continue to be made available in these repositories
+        - *I'm using .NET Core 2.1:*
+            - Use `microsoft/dotnet`, that's it!
+                - Ok, I lied... nightly builds are in `microsoft/dotnet-nightly`
+            - **v2.1 is pre-release so all of this is subject to change :)**
+            - *Common, tell me the specifics!* Ok...
+                - `microsoft/dotnet:2-sdk` for developing any netcore app
+                - `microsoft/dotnet:2-runtime` as a production base for non-aspnetcore apps
+                - `microsoft/dotnet:2-aspnetcore-runtime` as a production base for aspnetcore apps
+        - *I'm upgrading 1.X/2.0 to 2.1+*
+            - [ ] TODO upgrade notes
+        - [ ] TODO link announcement
+    - [ ] TODO - rework course files to use 2.1
+    - [ ] TODO other big 2.1 changes
+
+### 2.0.0 RTM notes
+
 All branches in this repository have been updated for `2.0.0 RTM`. [Issue #3](https://github.com/g0t4/aspnetcore-generator-api/issues/3)
 
 If you want to use a future release:
