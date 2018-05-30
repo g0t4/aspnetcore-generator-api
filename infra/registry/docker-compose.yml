@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+  my-registry:
+    image: registry:2.6.1
+    volumes:
+      - registry:/var/lib/registry
+    ports:
+      - "32770:5000" 
+     
+volumes:
+   registry:
