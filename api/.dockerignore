@@ -1,2 +1,4 @@
-*
-!bin/Debug/netcoreapp2.2/netcoreapp2.2/publish
+bin/
+obj/
+Dockerfile
+.dockerignore
