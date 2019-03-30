@@ -1,12 +1,15 @@
-﻿FROM mcr.microsoft.com/dotnet/core/sdk:2.2
+﻿# Build Stage
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2 as build-env
+WORKDIR /api
 
-WORKDIR /app
-COPY . .
-RUN dir
-
+COPY api.csproj .
 RUN dotnet restore
+
+COPY . .
 RUN dotnet publish -o /publish
 
+# Runtime Image State
+FROM mcr.microsoft.com/dotnet/core/runtime:2.2 as runtime
 WORKDIR /publish
-
-ENTRYPOINT ["dotnet", "/publish/api.dll"]
+COPY --from=build-env /publish .
+ENTRYPOINT ["dotnet", "api.dll"]

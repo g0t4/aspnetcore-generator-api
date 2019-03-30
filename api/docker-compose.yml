@@ -1,0 +1,9 @@
+﻿version: '3.7'
+
+services:
+  generator:
+    build:
+      context: .
+    image: konstantinf/generator:multi
+    ports:
+      - "8080:80"
