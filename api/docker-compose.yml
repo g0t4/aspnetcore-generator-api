@@ -7,3 +7,8 @@ services:
     image: konstantinf/generator:multi
     ports:
       - "8080:80"
+  mail:
+    image: konstantinf/mailhog:1.0.0
+    ports:
+      - "8025:8025"
+      - "1025:1025"

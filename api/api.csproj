@@ -12,6 +12,7 @@
   <ItemGroup>
     <!--<PackageReference Include="Faker.Net" Version="1.0.3" />-->
     <PackageReference Include="Faker.Net" Version="1.1.1" />
+    <PackageReference Include="MailKit" Version="2.1.3" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Xml" Version="2.2.0" />
