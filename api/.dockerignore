@@ -3,3 +3,5 @@ obj/
 Dockerfile
 .dockerignore
 docker-compose.yml
+.*dockerignore
+*Dockerfile

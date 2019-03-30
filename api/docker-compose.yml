@@ -8,6 +8,9 @@ services:
     ports:
       - "8080:80"
   mail:
+    build:
+      context: .
+      dockerfile: mailhog.Dockerfile
     image: konstantinf/mailhog:1.0.0
     ports:
       - "8025:8025"
