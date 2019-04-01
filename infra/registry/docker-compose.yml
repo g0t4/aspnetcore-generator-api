@@ -1,0 +1,15 @@
+version: '3.7'
+
+#docker run -d -p 5000:5000 --restart=always --name registry -v C:\registry:C:\registry stefanscherer/registry-windows:2.6.2
+services:
+    my-registry:
+        image: stefanscherer/registry-windows:2.6.2
+        volumes:
+            - registry:C:\registry
+        ports:
+            - "55000:5000"
+        restart: unless-stopped
+            
+volumes:
+    registry:
+            

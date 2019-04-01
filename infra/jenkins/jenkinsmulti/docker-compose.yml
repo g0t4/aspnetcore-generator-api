@@ -1,0 +1,37 @@
+version: '3.7'
+
+# docker run   -u root   --rm   -d   -p 8080:8080   -p 50000:50000   -v jenkins-data:/var/jenkins_home   -v /var/run/docker.sock:/var/run/docker.sock   jenkinsci/blueocean
+
+
+#docker run --rm -it -p 8181:8080 -p 50000:50000 -d jenkins-windows:2.0
+services:
+  master:
+    # build:
+      # context: .
+      # target: master
+    image: jenkins-windows:2.0
+    ports:
+      - "8181:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins-master:C:\jenkins
+      
+  # worker:
+    # build:
+      # context: .
+      # target: agent
+    # image: jenkins_windows_agent:2.0
+    # environment:
+      # JENKINS_MASTER: "http://10.0.0.8:8181"
+      # JENKINS_NAME: "worker"
+      # JENKINS_USER: "admin"
+      # JENKINS_PASS: "admin"
+      # JENKINS_RETRY: "10"
+    # volumes:
+    # - jenkins-worker:/var/jenkins_home/worker
+
+volumes:
+  jenkins-master:
+  #jenkins-worker:
+  
+            
