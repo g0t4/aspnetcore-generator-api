@@ -1,0 +1,14 @@
+﻿version: '3.7'
+
+services:
+  generator:
+    build:
+      context: .
+    image: konstantinf/generator:multi
+    ports:
+      - "8000:80"
+  mail:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"
+      - "1025:1025"
