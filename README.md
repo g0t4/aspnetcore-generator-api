@@ -1,4 +1,4 @@
-Access this repository: http://bit.ly/aspnetcoredocker
+ Access this repository: http://bit.ly/aspnetcoredocker
 
 ## Branch to course mapping
 
