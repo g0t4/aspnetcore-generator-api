@@ -1,4 +1,10 @@
 **/bin/
 **/obj/
-**/.git/
+**/.git*/
 **/.vs/
+infra/
+**/*Dockerfile*
+**/.*dockerignore*
+**/*docker-compose*.yml
+LICENSE
+README*
