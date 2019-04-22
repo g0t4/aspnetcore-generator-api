@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  sh-registry:
+    image: registry:latest
+    volumes:
+      - registry:/var/lib/registry
+    ports:
+      - "55000:5000"
+    restart: unless-stopped
+
+volumes:
+  registry:
