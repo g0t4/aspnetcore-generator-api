@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  generator:
+    image: straps-q2-registry:56000/tcbuild:ci-9
+    #
+    # DO NOT USE PORTS IN CI BUILD - 
+    # THIS IS FOR LOCAL DEV DEBUGGING ONLY...
+    #
+    ports:
+      - "8080:80"
+  mail:
+    image: mailhog/mailhog
+    #
+    # DO NOT USE PORTS IN CI BUILD - 
+    # THIS IS FOR LOCAL DEV DEBUGGING ONLY...
+    #
+    ports:
+      - "8025:8025"
+  integration:
+    image: straps-q2-registry:56000/tcbuild:integration-9
+    build: .
